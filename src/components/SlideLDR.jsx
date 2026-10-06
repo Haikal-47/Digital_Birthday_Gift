@@ -39,6 +39,13 @@ export default function SlideLDR({ onNext, isExiting }) {
         <h3 className="ldr-header">Jarak Memisahkan, Cinta Menyatukan 💕</h3>
 
         <div className="ldr-card">
+          <img 
+            src="/nailong_cheer.png" 
+            alt="Nailong Semangat LDR" 
+            className="nailong-doll nailong-top-left" 
+            style={{ animationName: 'nailongBobCheer' }}
+            title="LDR gak masalah, cinta kita selalu kuat! ✈️💖"
+          />
           <p className="ldr-card-text">
             Meskipun jarak dan perbedaan zona waktu sering kali membatasi kita untuk
             merayakan hari spesial ini secara langsung, rasa sayang dan doaku selalu

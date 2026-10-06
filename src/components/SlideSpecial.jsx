@@ -35,6 +35,14 @@ export default function SlideSpecial({ onNext, isExiting }) {
               className="special-card"
               style={{ animationDelay: `${0.2 + index * 0.15}s` }}
             >
+              {index === 1 && (
+                <img 
+                  src="/nailong_right.png" 
+                  alt="Nailong Penuh Cinta" 
+                  className="nailong-doll nailong-top-center" 
+                  title="Kamu paling penyayang di hatiku! 💗"
+                />
+              )}
               <span className="special-card-icon">{reason.icon}</span>
               <h3 className="special-card-title">{reason.title}</h3>
               <p className="special-card-text">{reason.text}</p>

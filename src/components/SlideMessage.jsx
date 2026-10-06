@@ -17,6 +17,13 @@ export default function SlideMessage({ onNext, isExiting }) {
 
         <div className="message-card-side">
           <div className="message-card">
+            <img 
+              src="/nailong_gift.png" 
+              alt="Nailong Bawa Kado" 
+              className="nailong-doll nailong-top-right" 
+              style={{ animationName: 'nailongBobGift' }}
+              title="Nailong bawa kado ultah buat kamu! 🎁🥰"
+            />
             <h3 className="message-card-header">Happy Birthday</h3>
             <div className="message-card-text">
               <p>Selamat ulang tahun, Sayang!! 🎂🎉</p>

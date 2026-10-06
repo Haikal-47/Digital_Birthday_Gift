@@ -20,6 +20,13 @@ export default function SlideFlowers({ onNext, isExiting }) {
 
         <div className="flowers-card-side">
           <div className="flowers-card">
+            <img 
+              src="/nailong_flower.png" 
+              alt="Nailong Bawa Bunga" 
+              className="nailong-doll nailong-top-left" 
+              style={{ animationName: 'nailongBobFlower' }}
+              title="Bunga mawar spesial buat yang paling cantik! 🌹🥰"
+            />
             <p className="flowers-card-text">
               Katanya bunga itu simbol ketulusan dan keindahan, makanya pas banget buat 
               mewakili perasaan aku ke kamu. 🌹

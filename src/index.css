@@ -1255,7 +1255,7 @@ button {
   color: var(--white);
   box-shadow: var(--shadow-heavy);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   box-sizing: border-box;
 }
 
@@ -1416,7 +1416,7 @@ button {
   box-shadow: var(--shadow-heavy);
   text-align: left;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   box-sizing: border-box;
   width: 100%;
 }
@@ -1478,7 +1478,7 @@ button {
   box-shadow: var(--shadow-heavy);
   transition: all var(--transition-medium);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   box-sizing: border-box;
 }
 
@@ -1672,6 +1672,25 @@ button {
   animation: nailongBobRight 3.2s ease-in-out infinite alternate 0.6s;
 }
 
+.nailong-top-left {
+  top: -46px;
+  left: 18px;
+  animation: nailongBobLeft 3.2s ease-in-out infinite alternate;
+}
+
+.nailong-top-right {
+  top: -46px;
+  right: 18px;
+  animation: nailongBobRight 3.2s ease-in-out infinite alternate 0.5s;
+}
+
+.nailong-top-center {
+  top: -46px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: nailongBobCenter 3s ease-in-out infinite alternate;
+}
+
 @keyframes nailongBobLeft {
   0% { transform: translateY(0) rotate(-6deg); }
   100% { transform: translateY(-9px) rotate(-1deg); }
@@ -1680,6 +1699,27 @@ button {
 @keyframes nailongBobRight {
   0% { transform: translateY(0) rotate(6deg); }
   100% { transform: translateY(-9px) rotate(1deg); }
+}
+
+@keyframes nailongBobCenter {
+  0% { transform: translateX(-50%) translateY(0) scale(1); }
+  100% { transform: translateX(-50%) translateY(-9px) scale(1.04); }
+}
+
+@keyframes nailongBobCheer {
+  0% { transform: translateY(0) scale(1) rotate(-5deg); }
+  50% { transform: translateY(-10px) scale(1.05) rotate(0deg); }
+  100% { transform: translateY(0) scale(1) rotate(5deg); }
+}
+
+@keyframes nailongBobGift {
+  0% { transform: translateY(0) rotate(4deg); }
+  100% { transform: translateY(-9px) rotate(-2deg); }
+}
+
+@keyframes nailongBobFlower {
+  0% { transform: translateY(0) rotate(-5deg); }
+  100% { transform: translateY(-9px) rotate(2deg); }
 }
 
 .love-card-text {
@@ -1759,7 +1799,7 @@ button {
   color: var(--white);
   box-shadow: var(--shadow-heavy);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   box-sizing: border-box;
 }
 
@@ -2053,14 +2093,20 @@ button {
     height: clamp(48px, 12vw, 68px);
   }
 
-  .nailong-left {
+  .nailong-left,
+  .nailong-top-left {
     top: -36px;
-    left: 6px;
+    left: 8px;
   }
 
-  .nailong-right {
+  .nailong-right,
+  .nailong-top-right {
     top: -36px;
-    right: 6px;
+    right: 8px;
+  }
+
+  .nailong-top-center {
+    top: -36px;
   }
 
   /* Grid gallery → 2 columns on mobile */
@@ -2339,14 +2385,20 @@ button {
     height: clamp(42px, 11vw, 58px);
   }
 
-  .nailong-left {
+  .nailong-left,
+  .nailong-top-left {
     top: -30px;
     left: 4px;
   }
 
-  .nailong-right {
+  .nailong-right,
+  .nailong-top-right {
     top: -30px;
     right: 4px;
+  }
+
+  .nailong-top-center {
+    top: -30px;
   }
 }
 
