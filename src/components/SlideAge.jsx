@@ -9,7 +9,7 @@ const MEMORY_PHOTOS = [
   { src: '/8.jpeg', alt: 'Memory 5', caption: 'Gemas Banget Kamu 🎀' },
   { src: '/9.jpeg', alt: 'Memory 6', caption: 'Selalu Bikin Jatuh Cinta 🌷' },
   { src: '/10.jpeg', alt: 'Memory 7', caption: 'Cantik Natural Apa Adanya 💫' },
-  { src: '/WhatsApp Image 2026-10-06 at 15.24.23.jpeg', alt: 'Memory 8', caption: 'Pelipur Lara Hatiku 💕' },
+  { src: '/11.jpeg', alt: 'Memory 8', caption: 'Pelipur Lara Hatiku 💕' },
   { src: '/WhatsApp Image 2026-10-06 at 17.53.46.jpeg', alt: 'Memory 9', caption: 'Bidadariku yang Rajin 📚💖' },
 ];
 
@@ -43,7 +43,7 @@ export default function SlideAge({ onNext, isExiting }) {
 
       <div className="age-content">
         <div className="age-badge">🎉 October 29th, 2026</div>
-        
+
         <h2 className="age-title">Happy Birthday My Favorite Person!</h2>
 
         <div className="age-centerpiece">
@@ -62,7 +62,7 @@ export default function SlideAge({ onNext, isExiting }) {
         {/* Gallery Section Header & View Switcher */}
         <div className="age-gallery-header">
           <span className="age-gallery-title">✨ My Beautiful Girl ✨</span>
-          
+
           <div className="age-view-toggle">
             <button
               className={`view-toggle-btn ${viewMode === 'carousel' ? 'active' : ''}`}
@@ -84,8 +84,8 @@ export default function SlideAge({ onNext, isExiting }) {
         {/* Mode 1: Large Swipeable Polaroid Carousel (Touch-friendly & Big on Mobile) */}
         {viewMode === 'carousel' ? (
           <div className="carousel-outer-wrapper">
-            <button 
-              className="carousel-arrow-btn left" 
+            <button
+              className="carousel-arrow-btn left"
               onClick={() => scrollSlider('left')}
               aria-label="Previous photos"
             >
@@ -113,8 +113,8 @@ export default function SlideAge({ onNext, isExiting }) {
               ))}
             </div>
 
-            <button 
-              className="carousel-arrow-btn right" 
+            <button
+              className="carousel-arrow-btn right"
               onClick={() => scrollSlider('right')}
               aria-label="Next photos"
             >
@@ -152,8 +152,8 @@ export default function SlideAge({ onNext, isExiting }) {
       {selectedIndex !== null && (
         <div className="alert-overlay" onClick={() => setSelectedIndex(null)}>
           <div className="photo-modal-large" onClick={(e) => e.stopPropagation()}>
-            <button 
-              className="modal-close-btn" 
+            <button
+              className="modal-close-btn"
               onClick={() => setSelectedIndex(null)}
               aria-label="Close"
             >
@@ -161,8 +161,8 @@ export default function SlideAge({ onNext, isExiting }) {
             </button>
 
             <div className="modal-body">
-              <button 
-                className="modal-nav-btn left" 
+              <button
+                className="modal-nav-btn left"
                 onClick={handlePrevPhoto}
                 title="Foto sebelumnya"
               >
@@ -170,15 +170,15 @@ export default function SlideAge({ onNext, isExiting }) {
               </button>
 
               <div className="modal-img-container">
-                <img 
-                  src={MEMORY_PHOTOS[selectedIndex].src} 
-                  alt={MEMORY_PHOTOS[selectedIndex].alt} 
-                  className="photo-modal-img" 
+                <img
+                  src={MEMORY_PHOTOS[selectedIndex].src}
+                  alt={MEMORY_PHOTOS[selectedIndex].alt}
+                  className="photo-modal-img"
                 />
               </div>
 
-              <button 
-                className="modal-nav-btn right" 
+              <button
+                className="modal-nav-btn right"
                 onClick={handleNextPhoto}
                 title="Foto selanjutnya"
               >
