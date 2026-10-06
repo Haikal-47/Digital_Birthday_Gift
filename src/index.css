@@ -1616,12 +1616,13 @@ button {
 
 .love-polaroid {
   background: var(--white);
-  padding: 8px 8px 24px;
+  padding: 6px;
   box-shadow: 0 8px 24px rgba(107, 29, 42, 0.16);
-  border-radius: 4px;
-  width: 145px;
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  width: 130px;
+  border: 2px solid rgba(255, 255, 255, 0.95);
   transition: transform var(--transition-medium);
+  box-sizing: border-box;
 }
 
 .love-polaroid:hover {
@@ -1631,9 +1632,9 @@ button {
 
 .love-polaroid img {
   width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 2px;
+  height: auto;
+  display: block;
+  border-radius: 4px;
 }
 
 .love-card {
@@ -2007,27 +2008,35 @@ button {
     gap: 12px;
   }
 
-  /* Love gallery → 2 per row on mobile */
+  /* Love gallery → 3 in a row on mobile with natural aspect ratio */
   .love-gallery {
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
-    gap: 10px;
+    align-items: flex-start;
+    gap: 8px;
     width: 100%;
+    max-width: 400px;
   }
 
   .love-hanging-item {
-    flex: 0 0 calc(50% - 10px);
-    max-width: calc(50% - 10px);
+    flex: 1 1 0;
+    max-width: 120px;
+    min-width: 80px;
   }
 
   .love-polaroid {
     width: 100%;
-    padding: 6px 6px 18px;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(107, 29, 42, 0.16);
   }
 
   .love-polaroid img {
-    height: clamp(100px, 30vw, 140px);
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
   }
 
   .hanger-pin {
@@ -2288,13 +2297,18 @@ button {
     padding: 4px 4px 8px;
   }
 
-  .love-hanging-item {
-    flex: 0 0 calc(50% - 6px);
-    max-width: calc(50% - 6px);
+  .love-gallery {
+    gap: 6px;
   }
 
-  .love-polaroid img {
-    height: clamp(80px, 28vw, 110px);
+  .love-hanging-item {
+    max-width: 105px;
+    min-width: 65px;
+  }
+
+  .love-polaroid {
+    padding: 4px;
+    border-radius: 6px;
   }
 
   .keyword-grid {

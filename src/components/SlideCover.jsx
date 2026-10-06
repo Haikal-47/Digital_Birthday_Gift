@@ -18,7 +18,7 @@ export default function SlideCover({ onNext, isExiting }) {
 
         <div className="cover-divider" />
 
-        <h2 className="cover-name">Okta Vivi Setianingrum</h2>
+        <h2 className="cover-name">Okta Vivi Setianingrum </h2>
 
         <p className="cover-quote">
           &ldquo;A little digital memory book built with love, just for you.&rdquo;

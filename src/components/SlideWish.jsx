@@ -43,7 +43,7 @@ export default function SlideWish() {
 
   const handleWhatsApp = useCallback(() => {
     const message = encodeURIComponent(
-      'Terima kasih untuk hadiah digitalnya, Sayang! 🥰🎂💕 Aku sangat terharu!'
+      'Terima kasih untuk hadiah digitalnya, Sayang! 🥰💕 Aku sangat terharu!'
     );
     window.open(`https://wa.me/6285894727971?text=${message}`, '_blank');
   }, []);
