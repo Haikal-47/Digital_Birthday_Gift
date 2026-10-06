@@ -1971,7 +1971,7 @@ button {
    RESPONSIVE MEDIA QUERIES
    ============================================ */
 
-/* Tablet & Mobile (<= 768px) */
+/* Tablet & Small Desktop (<= 768px) */
 @media (max-width: 768px) {
   .slide {
     padding: 72px 16px 36px;
@@ -1992,6 +1992,7 @@ button {
     display: none;
   }
 
+  /* Stack all side-by-side layouts on mobile */
   .message-layout,
   .love-content,
   .flowers-content {
@@ -2000,43 +2001,156 @@ button {
     gap: 16px;
   }
 
+  /* Special cards → single column */
   .special-grid {
     grid-template-columns: 1fr;
     gap: 12px;
   }
 
+  /* Love gallery → 2 per row on mobile */
   .love-gallery {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 8px;
+    gap: 10px;
     width: 100%;
   }
 
+  .love-hanging-item {
+    flex: 0 0 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+  }
+
   .love-polaroid {
-    width: clamp(80px, 26vw, 105px);
-    padding: 5px 5px 20px;
-    transform: none !important;
+    width: 100%;
+    padding: 6px 6px 18px;
   }
 
   .love-polaroid img {
-    height: clamp(80px, 26vw, 105px);
+    height: clamp(100px, 30vw, 140px);
   }
 
+  .hanger-pin {
+    margin-bottom: -8px;
+  }
+
+  .hanger-clip {
+    font-size: 1rem;
+  }
+
+  /* Nailong dolls smaller on mobile */
+  .nailong-doll {
+    width: clamp(48px, 12vw, 68px);
+    height: clamp(48px, 12vw, 68px);
+  }
+
+  .nailong-left {
+    top: -36px;
+    left: 6px;
+  }
+
+  .nailong-right {
+    top: -36px;
+    right: 6px;
+  }
+
+  /* Grid gallery → 2 columns on mobile */
+  .age-grid-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(8px, 2.5vw, 12px);
+  }
+
+  .grid-photo-card {
+    padding: 6px 6px 10px;
+  }
+
+  .grid-photo-img {
+    aspect-ratio: 3 / 4;
+  }
+
+  .grid-photo-tag {
+    font-size: clamp(0.68rem, 2.2vw, 0.78rem);
+    margin-top: 6px;
+    white-space: normal;
+    line-height: 1.3;
+  }
+
+  /* Text alignment stays left for cards */
   .message-card-text,
   .ldr-card-text,
   .love-card-text,
   .flowers-card-text {
     text-align: left;
   }
+
+  /* Message polaroid centered */
+  .polaroid {
+    width: clamp(180px, 52vw, 240px);
+    margin: 0 auto;
+    transform: rotate(-1deg);
+  }
+
+  .polaroid img {
+    height: clamp(210px, 56vw, 280px);
+  }
+
+  /* Flowers image full width on mobile */
+  .flowers-img {
+    width: clamp(200px, 70vw, 320px);
+    max-height: 260px;
+    margin: 0 auto;
+  }
+
+  /* LDR section responsive */
+  .ldr-route-header {
+    gap: clamp(6px, 2vw, 12px);
+  }
+
+  .ldr-city-photo {
+    width: clamp(48px, 13vw, 68px);
+    height: clamp(48px, 13vw, 68px);
+  }
+
+  /* Wish section */
+  .wish-img {
+    width: min(340px, 90vw);
+    max-height: 200px;
+  }
+
+  .wish-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .wish-btn {
+    width: min(300px, 90vw);
+  }
+
+  /* Lightbox modal */
+  .photo-modal-large {
+    max-width: 94vw;
+    padding: 12px;
+  }
+
+  .modal-nav-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 1.3rem;
+  }
+
+  .photo-modal-caption {
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+  }
 }
 
 /* Small Smartphone (<= 480px) */
 @media (max-width: 480px) {
   .slide {
-    padding: 68px 12px 30px;
+    padding: 64px 10px 28px;
   }
 
+  /* Gatekeeper */
   .keyword-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 6px;
@@ -2044,8 +2158,8 @@ button {
 
   .keyword-btn {
     padding: 12px 4px;
-    font-size: 0.88rem;
-    letter-spacing: 1px;
+    font-size: 0.85rem;
+    letter-spacing: 0.8px;
   }
 
   .secret-input-group {
@@ -2063,13 +2177,162 @@ button {
     max-width: 220px;
   }
 
+  /* Age slide */
+  .age-centerpiece {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .age-number {
+    font-size: clamp(3.2rem, 14vw, 4.8rem);
+  }
+
+  .age-cake-img {
+    width: clamp(120px, 36vw, 160px);
+    height: clamp(120px, 36vw, 160px);
+  }
+
+  .carousel-arrow-btn {
+    display: none;
+  }
+
+  .age-carousel-track {
+    padding: 6px 6px 14px;
+    gap: 10px;
+  }
+
+  .age-polaroid-card {
+    width: clamp(115px, 36vw, 145px);
+  }
+
+  .age-gallery-header {
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+  }
+
+  /* Love section */
+  .love-title {
+    font-size: clamp(1.7rem, 7vw, 2.4rem);
+  }
+
+  .love-card {
+    padding: clamp(18px, 4vw, 28px) clamp(14px, 3.5vw, 24px);
+    margin-top: 30px;
+  }
+
+  .love-card-text {
+    font-size: clamp(0.8rem, 2.5vw, 0.88rem);
+    line-height: 1.75;
+  }
+
+  /* LDR section */
   .ldr-route-header {
+    gap: 4px;
+  }
+
+  .ldr-city-name {
+    font-size: clamp(0.82rem, 2.8vw, 1rem);
+  }
+
+  .ldr-route-line {
+    max-width: 140px;
+    min-width: 40px;
+  }
+
+  /* Message card */
+  .message-card {
+    padding: clamp(16px, 3.5vw, 24px);
+  }
+
+  .message-card-header {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  .message-card-text {
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    line-height: 1.7;
+  }
+
+  /* Flowers */
+  .flowers-card {
+    padding: clamp(16px, 3.5vw, 24px);
+  }
+
+  .flowers-card-text {
+    font-size: clamp(0.82rem, 2.5vw, 0.9rem);
+  }
+
+  /* Wish */
+  .candle-container {
+    gap: clamp(8px, 2.5vw, 14px);
+  }
+
+  .candle-stick {
+    height: 40px;
+  }
+}
+
+/* Very Small Screens (<= 360px) */
+@media (max-width: 360px) {
+  .slide {
+    padding: 58px 8px 24px;
+  }
+
+  .age-grid-gallery {
+    grid-template-columns: repeat(2, 1fr);
     gap: 6px;
   }
 
-  .wish-actions {
-    flex-direction: column;
-    align-items: center;
+  .grid-photo-card {
+    padding: 4px 4px 8px;
+  }
+
+  .love-hanging-item {
+    flex: 0 0 calc(50% - 6px);
+    max-width: calc(50% - 6px);
+  }
+
+  .love-polaroid img {
+    height: clamp(80px, 28vw, 110px);
+  }
+
+  .keyword-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+
+  .keyword-btn {
+    padding: 10px 2px;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+  }
+
+  .gatekeeper-title {
+    font-size: clamp(1.3rem, 5vw, 1.8rem);
+  }
+
+  .ldr-card {
+    padding: clamp(14px, 3.5vw, 24px);
+  }
+
+  .special-card {
+    padding: clamp(14px, 3vw, 20px);
+  }
+
+  .nailong-doll {
+    width: clamp(42px, 11vw, 58px);
+    height: clamp(42px, 11vw, 58px);
+  }
+
+  .nailong-left {
+    top: -30px;
+    left: 4px;
+  }
+
+  .nailong-right {
+    top: -30px;
+    right: 4px;
   }
 }
 
@@ -2189,30 +2452,25 @@ button {
   100% { height: 14px; }
 }
 
-/* Mobile optimizations for SlideAge */
-@media (max-width: 580px) {
-  .age-centerpiece {
-    flex-direction: column;
-    gap: 4px;
+/* Music widget responsive for mobile */
+@media (max-width: 480px) {
+  .music-widget {
+    bottom: 10px;
+    left: 10px;
+    padding: 5px 10px 5px 6px;
+    gap: 7px;
   }
-  .age-number {
-    font-size: clamp(3.2rem, 14vw, 4.8rem);
+
+  .music-disc {
+    font-size: 1.1rem;
   }
-  .age-cake-img {
-    width: clamp(125px, 38vw, 165px);
-    height: clamp(125px, 38vw, 165px);
+
+  .music-track-title {
+    max-width: 130px;
+    font-size: 0.7rem;
   }
-  .carousel-arrow-btn {
-    display: none;
-  }
-  .age-carousel-track {
-    padding: 6px 8px 14px;
-    gap: 12px;
-  }
-  .age-polaroid-card {
-    width: clamp(120px, 38vw, 150px);
-  }
-  .grid-photo-card {
-    padding: 5px 5px 7px;
+
+  .music-track-artist {
+    font-size: 0.62rem;
   }
 }
