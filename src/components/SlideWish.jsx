@@ -19,7 +19,7 @@ function createConfettiPieces(count = 60) {
   }));
 }
 
-export default function SlideWish() {
+export default function SlideWish({ isExiting = false } = {}) {
   const [candlesBlown, setCandlesBlown] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
   const [confettiPieces, setConfettiPieces] = useState([]);
@@ -71,7 +71,7 @@ export default function SlideWish() {
   }, [candlesBlown]);
 
   return (
-    <div className="slide slide-wish">
+    <div className={`slide slide-wish ${isExiting ? 'slide-exit' : ''}`}>
       {/* Confetti */}
       {showConfetti && (
         <div className="confetti-container">

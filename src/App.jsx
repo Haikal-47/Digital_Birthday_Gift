@@ -15,19 +15,40 @@ import MusicPlayer from './components/MusicPlayer';
 
 const TOTAL_SLIDES = 9;
 
+const TRANSITION_EFFECTS = [
+  'effect-fade-zoom',    // Fade + Zoom (lembut, romantis)
+  'effect-slide-left',   // Slide halus dari kanan ke kiri (lembar album foto)
+  'effect-blur-clear',   // Dari blur dreamy menjadi jernih berkilau
+  'effect-ken-burns',    // Ken Burns slow cinematic zoom & pan
+  'effect-soft-scale',   // Soft scale dengan sentuhan rotasi mikro elegan
+  'effect-slide-right',  // Slide lembut arah sebaliknya
+];
+
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [unlockedSlide, setUnlockedSlide] = useState(1); // Can navigate up to this slide
+  const [activeEffect, setActiveEffect] = useState(TRANSITION_EFFECTS[0]);
 
   const transitionTo = useCallback((targetSlide) => {
+    if (isTransitioning) return;
+
+    // Tentukan variasi efek transisi berdasarkan arah dan slide tujuan
+    const isBackward = targetSlide < currentSlide;
+    const effect = isBackward
+      ? 'effect-slide-right'
+      : TRANSITION_EFFECTS[targetSlide % TRANSITION_EFFECTS.length];
+
+    setActiveEffect(effect);
     setIsTransitioning(true);
+
+    // Durasi transisi halus 850ms (keluar perlahan), lalu slide baru masuk secara sinematik
     setTimeout(() => {
       setCurrentSlide(targetSlide);
       setUnlockedSlide(prev => Math.max(prev, targetSlide));
       setIsTransitioning(false);
-    }, 400);
-  }, []);
+    }, 850);
+  }, [isTransitioning, currentSlide]);
 
   const goToSlide = useCallback((slideIndex) => {
     if (isTransitioning || slideIndex === currentSlide) return;
@@ -65,7 +86,7 @@ function App() {
       case 5: return <SlideSpecial {...props} />;
       case 6: return <SlideLove {...props} />;
       case 7: return <SlideFlowers {...props} />;
-      case 8: return <SlideWish />;
+      case 8: return <SlideWish {...props} />;
       default: return <SlideCover {...props} />;
     }
   };
@@ -82,7 +103,10 @@ function App() {
           maxUnlocked={unlockedSlide - 2}
         />
       )}
-      <div className="slide-wrapper" key={currentSlide}>
+      <div 
+        className={`slide-wrapper ${activeEffect} ${isTransitioning ? 'transitioning' : ''}`} 
+        key={`${currentSlide}-${activeEffect}`}
+      >
         {renderSlide()}
       </div>
     </div>
