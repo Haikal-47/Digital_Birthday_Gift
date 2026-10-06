@@ -96,7 +96,7 @@ export default function SlideGatekeeper({ onSuccess, isExiting }) {
             <span className="alert-emoji">🙈</span>
             <h3 className="alert-title">Ups, kata kunci salah!</h3>
             <p className="alert-message">
-              Coba ingat-ingat tanggal spesial kita 😉
+              Coba ingat-ingat tanggal spesial kamu 😉
               <br />
               <small style={{ opacity: 0.6 }}>Hint: ddmmyy</small>
             </p>

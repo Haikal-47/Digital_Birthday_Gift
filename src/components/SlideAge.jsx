@@ -61,7 +61,7 @@ export default function SlideAge({ onNext, isExiting }) {
 
         {/* Gallery Section Header & View Switcher */}
         <div className="age-gallery-header">
-          <span className="age-gallery-title">✨ Kenangan Manis Sayang ✨</span>
+          <span className="age-gallery-title">✨ My Beautiful Girl ✨</span>
           
           <div className="age-view-toggle">
             <button
