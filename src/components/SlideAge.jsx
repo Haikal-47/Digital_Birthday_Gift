@@ -6,11 +6,13 @@ const MEMORY_PHOTOS = [
   { src: '/3.jpeg', alt: 'Memory 2', caption: 'Bidadari Cantikku ✨' },
   { src: '/4.jpeg', alt: 'Memory 3', caption: 'Paling Imut Sedunia 🌸' },
   { src: '/5.jpeg', alt: 'Memory 4', caption: 'Tatapan Paling Hangat 💖' },
-  { src: '/8.jpeg', alt: 'Memory 5', caption: 'Gemas Banget Kamu 🎀' },
-  { src: '/9.jpeg', alt: 'Memory 6', caption: 'Selalu Bikin Jatuh Cinta 🌷' },
-  { src: '/10.jpeg', alt: 'Memory 7', caption: 'Cantik Natural Apa Adanya 💫' },
-  { src: '/11.jpeg', alt: 'Memory 8', caption: 'Pelipur Lara Hatiku 💕' },
-  { src: '/WhatsApp Image 2026-10-06 at 17.53.46.jpeg', alt: 'Memory 9', caption: 'Bidadariku yang Rajin 📚💖' },
+  { src: '/6.jpeg', alt: 'Memory 5', caption: 'Cantik yang Selalu Menenangkan 🌷' },
+  { src: '/7.jpeg', alt: 'Memory 6', caption: 'Pesona yang Bikin Terpikat 💫' },
+  { src: '/8.jpeg', alt: 'Memory 7', caption: 'Gemas Banget Kamu 🎀' },
+  { src: '/9.jpeg', alt: 'Memory 8', caption: 'Selalu Bikin Jatuh Cinta 💖' },
+  { src: '/10.jpeg', alt: 'Memory 9', caption: 'Cantik Natural Apa Adanya ✨' },
+  { src: '/11.jpeg', alt: 'Memory 10', caption: 'Pelipur Lara Hatiku 💕' },
+  { src: '/12.jpeg', alt: 'Memory 11', caption: 'Bidadariku yang Rajin 📚💖' },
 ];
 
 export default function SlideAge({ onNext, isExiting }) {
@@ -42,19 +44,19 @@ export default function SlideAge({ onNext, isExiting }) {
       </div>
 
       <div className="age-content">
-        <div className="age-badge">🎉 October 29th, 2026</div>
+        <div className="age-badge">🎉 November 10th, 2026</div>
 
         <h2 className="age-title">Happy Birthday My Favorite Person!</h2>
 
         <div className="age-centerpiece">
           <div className="age-number-container">
             <div className="age-number-glow" />
-            <div className="age-number">19</div>
+            <div className="age-number">23</div>
           </div>
 
           <img
-            src="/birthday_cake_19.jpg"
-            alt="Birthday Cake 19"
+            src="/kecil.jpeg"
+            alt="Andiny Waktu Kecil"
             className="age-cake-img"
           />
         </div>

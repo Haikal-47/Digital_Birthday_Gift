@@ -45,7 +45,7 @@ export default function SlideWish({ isExiting = false } = {}) {
     const message = encodeURIComponent(
       'Terima kasih untuk hadiah digitalnya, Sayang! 🥰💕 Aku sangat terharu!'
     );
-    window.open(`https://wa.me/6285894727971?text=${message}`, '_blank');
+    window.open(`https://wa.me/6288709741582?text=${message}`, '_blank');
   }, []);
 
   // Sparkle effect on mouse move (desktop)

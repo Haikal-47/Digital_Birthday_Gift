@@ -33,14 +33,13 @@ export default function SlideFlowers({ onNext, isExiting }) {
             </p>
             <br />
             <p className="flowers-card-text">
-              Maaf ya cuma bisa kirim bunga dulu, belum bisa kirim diriku sendiri buat 
-              langsung meluk kamu hari ini. 🤗
+              Bunga spesial ini aku persembahkan untukmu, wanita paling manis dan istimewa 
+              di hatiku. Semoga setiap kelopaknya membawa senyuman bahagia di wajah cantikmu. 🤗
             </p>
             <br />
             <p className="flowers-card-text">
-              Jangan lupa ditaruh di tempat yang sering kamu lihat, biar tiap kali 
-              ngeliat bunga ini kamu ingat kalau ada orang di jauh sana yang sayang 
-              banget sama kamu. 💕
+              Semoga harimu selalu dipenuhi kebahagiaan seindah bunga yang bermekaran, dan 
+              ingat ya, aku akan selalu ada di sampingmu untuk menyayangimu setiap hari. 💕
             </p>
           </div>
         </div>

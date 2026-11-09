@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 
-const KEYWORD_OPTIONS = ['150926', '250926', '050926', '291026', '020926', '151026'];
-const CORRECT_KEYWORD = '291026';
+const KEYWORD_OPTIONS = ['10112026', '25092026', '08072026', '15092026', '080726', '15102026'];
+const CORRECT_KEYWORDS = ['08072026', '080726'];
 
 export default function SlideGatekeeper({ onSuccess, isExiting }) {
   const [showAlert, setShowAlert] = useState(false);
@@ -9,10 +9,12 @@ export default function SlideGatekeeper({ onSuccess, isExiting }) {
   const [wrongBtn, setWrongBtn] = useState(null);
   const [isCorrect, setIsCorrect] = useState(false);
 
+  const isKeywordValid = (kw) => CORRECT_KEYWORDS.includes(kw);
+
   const handleKeywordClick = useCallback((keyword, index) => {
     if (isCorrect) return;
     
-    if (keyword === CORRECT_KEYWORD) {
+    if (isKeywordValid(keyword)) {
       setIsCorrect(true);
       onSuccess();
     } else {
@@ -26,7 +28,7 @@ export default function SlideGatekeeper({ onSuccess, isExiting }) {
     if (isCorrect) return;
 
     const cleaned = secretInput.trim().replace(/\D/g, '');
-    if (cleaned === CORRECT_KEYWORD || secretInput.trim() === CORRECT_KEYWORD) {
+    if (isKeywordValid(cleaned) || isKeywordValid(secretInput.trim())) {
       setIsCorrect(true);
       onSuccess();
     } else {
@@ -56,7 +58,7 @@ export default function SlideGatekeeper({ onSuccess, isExiting }) {
           {KEYWORD_OPTIONS.map((keyword, index) => (
             <button
               key={index}
-              className={`keyword-btn ${wrongBtn === index ? 'wrong' : ''} ${isCorrect && keyword === CORRECT_KEYWORD ? 'correct' : ''}`}
+              className={`keyword-btn ${wrongBtn === index ? 'wrong' : ''} ${isCorrect && isKeywordValid(keyword) ? 'correct' : ''}`}
               onClick={() => handleKeywordClick(keyword, index)}
               id={`keyword-btn-${index}`}
             >
@@ -73,11 +75,11 @@ export default function SlideGatekeeper({ onSuccess, isExiting }) {
           <input
             type="text"
             className="secret-input"
-            placeholder="_ _ _ _ _ _"
+            placeholder="_ _ _ _ _ _ _ _"
             value={secretInput}
             onChange={(e) => setSecretInput(e.target.value)}
             onKeyDown={handleKeyDown}
-            maxLength={6}
+            maxLength={8}
             id="secret-keyword-input"
           />
           <button 
@@ -96,9 +98,9 @@ export default function SlideGatekeeper({ onSuccess, isExiting }) {
             <span className="alert-emoji">🙈</span>
             <h3 className="alert-title">Ups, kata kunci salah!</h3>
             <p className="alert-message">
-              Coba ingat-ingat tanggal spesial kamu 😉
+              Coba ingat-ingat tanggal spesial kita 😉
               <br />
-              <small style={{ opacity: 0.6 }}>Hint: ddmmyy</small>
+              <small style={{ opacity: 0.6 }}>Hint: ddmmyyyy / ddmmyy</small>
             </p>
             <button 
               className="alert-close-btn" 

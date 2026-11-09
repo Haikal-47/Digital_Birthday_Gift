@@ -1,6 +1,17 @@
+import { useRef } from 'react';
 import NextButton from './NextButton';
 
 export default function SlideLDR({ onNext, isExiting }) {
+  const videoRef = useRef(null);
+
+  const handleVideoPlay = () => {
+    window.dispatchEvent(new Event('pause-music'));
+  };
+
+  const handleVideoPause = () => {
+    window.dispatchEvent(new Event('resume-music'));
+  };
+
   return (
     <div className={`slide slide-ldr ${isExiting ? 'slide-exit' : ''}`}>
       <div className="nav-top-right">
@@ -8,55 +19,60 @@ export default function SlideLDR({ onNext, isExiting }) {
       </div>
 
       <div className="ldr-content">
-        <div className="ldr-route-header">
-          <div className="ldr-city">
-            <img src="/Asep.jpeg" alt="Bogor" className="ldr-city-photo" />
-            <span className="ldr-city-name">Bogor</span>
-          </div>
-
-          <div className="ldr-route-line">
-            <div className="ldr-route-dashes">
-              <span className="ldr-dash" />
-              <span className="ldr-dash" />
-              <span className="ldr-dash" />
-              <span className="ldr-dash" />
-            </div>
-            <span className="ldr-plane">✈️</span>
-            <div className="ldr-route-dashes">
-              <span className="ldr-dash" />
-              <span className="ldr-dash" />
-              <span className="ldr-dash" />
-              <span className="ldr-dash" />
-            </div>
-          </div>
-
-          <div className="ldr-city">
-            <img src="/3.jpeg" alt="Medan" className="ldr-city-photo" />
-            <span className="ldr-city-name">Medan</span>
-          </div>
+        <div className="ldr-badge">
+          🎬 A Special Memory For You ✨
         </div>
 
-        <h3 className="ldr-header">Jarak Memisahkan, Cinta Menyatukan 💕</h3>
+        <h2 className="ldr-header">Momen Indah Bersamamu 💕</h2>
+        <p className="ldr-subtitle">Untuk Andiny Angelita yang selalu istimewa</p>
 
-        <div className="ldr-card">
-          <img 
-            src="/nailong_cheer.png" 
-            alt="Nailong Semangat LDR" 
-            className="nailong-doll nailong-top-left" 
-            style={{ animationName: 'nailongBobCheer' }}
-            title="LDR gak masalah, cinta kita selalu kuat! ✈️💖"
-          />
-          <p className="ldr-card-text">
-            Meskipun jarak dan perbedaan zona waktu sering kali membatasi kita untuk
-            merayakan hari spesial ini secara langsung, rasa sayang dan doaku selalu
-            sampai untukmu tanpa berkurang sedikit pun.
-          </p>
-          <br />
-          <p className="ldr-card-text">
-            Selamat ulang tahun; terima kasih sudah terus bertahan, saling percaya,
-            dan membuktikan bahwa ruang yang membentang di antara kita tidak pernah
-            cukup jauh untuk menandingi eratnya hubungan kita. 💖
-          </p>
+        <div className="ldr-media-layout">
+          {/* Video Player Card */}
+          <div className="ldr-video-wrapper">
+            <div className="ldr-video-frame">
+              <video
+                ref={videoRef}
+                src="/vidio1.mp4"
+                controls
+                playsInline
+                preload="metadata"
+                className="ldr-video-player"
+                onPlay={handleVideoPlay}
+                onPause={handleVideoPause}
+                onEnded={handleVideoPause}
+              />
+            </div>
+            <span className="ldr-video-tag">✨ Video Kenangan Kita ✨</span>
+          </div>
+
+          {/* Romantic Text Card */}
+          <div className="ldr-card">
+            <img 
+              src="/nailong_cheer.png" 
+              alt="Nailong Bahagia" 
+              className="nailong-doll nailong-top-left" 
+              style={{ animationName: 'nailongBobCheer' }}
+              title="Selalu bahagia bersama kamu! 💖"
+            />
+            <p className="ldr-card-text">
+              Setiap detik yang terekam di video ini adalah bukti nyata betapa berharganya 
+              dan indahnya setiap momen kebersamaan kita. Walaupun jarak dan waktu kadang 
+              memisahkan, rasa sayang dan rinduku padamu selalu utuh dan semakin bertambah 
+              setiap harinya.
+            </p>
+            <br />
+            <p className="ldr-card-text">
+              Video kenangan ini jadi pengingat betapa bersyukurnya aku bisa memiliki 
+              wanita sehangat dan seindah kamu di hidupku. Terima kasih sudah selalu hadir, 
+              tersenyum manis, dan menjadi tempat ternyaman untuk pulang dan berbagi cerita.
+            </p>
+            <br />
+            <p className="ldr-card-text">
+              Selamat ulang tahun yang ke-23, Andiny Angelita sayang! Semoga kita bisa 
+              terus berjalan berdampingan dan mengukir jutaan video serta cerita indah 
+              lainnya bersama selamanya. 🎬💖
+            </p>
+          </div>
         </div>
       </div>
     </div>

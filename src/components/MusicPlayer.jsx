@@ -77,10 +77,27 @@ export default function MusicPlayer() {
     window.addEventListener('touchstart', handleFirstUserInteraction, { once: true });
     window.addEventListener('keydown', handleFirstUserInteraction, { once: true });
 
+    const handleExternalPause = () => {
+      if (playerRef.current && typeof playerRef.current.pauseVideo === 'function') {
+        playerRef.current.pauseVideo();
+      }
+    };
+
+    const handleExternalResume = () => {
+      if (playerRef.current && typeof playerRef.current.playVideo === 'function') {
+        playerRef.current.playVideo();
+      }
+    };
+
+    window.addEventListener('pause-music', handleExternalPause);
+    window.addEventListener('resume-music', handleExternalResume);
+
     return () => {
       window.removeEventListener('click', handleFirstUserInteraction);
       window.removeEventListener('touchstart', handleFirstUserInteraction);
       window.removeEventListener('keydown', handleFirstUserInteraction);
+      window.removeEventListener('pause-music', handleExternalPause);
+      window.removeEventListener('resume-music', handleExternalResume);
     };
   }, []);
 

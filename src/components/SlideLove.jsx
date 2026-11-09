@@ -66,10 +66,10 @@ export default function SlideLove({ onNext, isExiting }) {
               biasa, yang selalu sabar, dan yang tak pernah lelah melengkapi kekuranganku.
             </p>
             <p>
-              Walaupun saat ini ada jarak yang memisahkan kita, percaya deh, rasa sayang 
-              dan doaku untukmu enggak pernah terhalang oleh kilometer apa pun. Setiap 
-              detik yang kita lalui bersama, bahkan lewat layar ponsel sekalipun, selalu 
-              jadi cerita favorit yang pengen aku ulang terus-terusan.
+              Setiap momen yang kita lalui bersama, mulai dari tawa lepas sampai obrolan 
+              sederhana setiap harinya, selalu jadi bagian favorit dalam hidupku. 
+              Kehadiranmu selalu membawa rasa tenang dan kehangatan yang membuat segalanya 
+              terasa jauh lebih indah dan bermakna.
             </p>
             <p>
               Di usiamu yang baru ini, aku berdoa semoga kamu selalu dilimpahi kebahagiaan 
