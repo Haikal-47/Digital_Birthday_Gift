@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 
-const YOUTUBE_VIDEO_ID = 'izEkQ7ZFUoA';
+const YOUTUBE_VIDEO_ID = 'hpFvN4uwIPc';
 
 export default function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -138,8 +138,8 @@ export default function MusicPlayer() {
         </div>
 
         <div className="music-info">
-          <span className="music-track-title">Merry Christmas, i miss you</span>
-          <span className="music-track-artist">Alex Crichton 💕</span>
+          <span className="music-track-title">Soft</span>
+          <span className="music-track-artist">LANY 💕</span>
         </div>
 
         <div className="music-status-icon">
